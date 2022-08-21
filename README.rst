@@ -102,6 +102,20 @@ The artwork logo was made by Gaëtan Ribémont and released under
 the `Creative Commons BY license <http://creativecommons.org/licenses/by/2.0/>`_.
 
 
+Migration to Rust
+-----------------
+
+We're currently migrating Poezio to Rust. The migration is happening in
+the ``roezio`` branch on the repository. You're welcome to try it out,
+report bugs, and contribute!
+
+To be able to run it you will need to install ``setuptools-rust``, and
+of course the Rust compiler suite. Check out ``rustc`` or ``rustup`` in
+your distribution package manager.
+
+You should then be able to run `python setup.py build_ext --inplace` to
+compile it locally, and launch poezio via `./launch.py`.
+
 Hacking
 -------
 
