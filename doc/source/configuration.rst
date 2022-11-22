@@ -546,8 +546,8 @@ or the way messages are displayed.
 
         **Default value:** ``-1``
 
-        Exact same thing than :term:`hide_status_change`, except that it concerns
-        the quit message, and that it will be hidden only if the value is ``0``.
+        Exact same thing as :term:`hide_status_change`, except that it concerns
+        the quit messages, and that it will be hidden only if the value is ``0``.
 
         Default setting means:
         - all quit and join notices will be displayed
@@ -1103,8 +1103,8 @@ found.
 
         **Default value:** ``-1``
 
-        Exact same thing than hide_status_change, except that it concerns
-        the quit message, and that it will be hidden only if the value is 0.
+        Exact same thing as hide_status_change, except that it concerns
+        the quit messages, and that it will be hidden only if the value is ``0``.
         Default setting means:
         - all quit and join notices will be displayed
 
