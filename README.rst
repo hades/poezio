@@ -42,9 +42,10 @@ From git
 `Documentation <https://doc.poez.io/install.html#install-from-source>`_
 
 
-You need python 3.7 or higher (preferably the latest) and the associated devel
-package, to build C modules, and the slixmpp python library.
-You also need aiodns if you want SRV record support.
+You need python 3.7 or higher (preferably the latest) and the associated
+devel package, as well as build tools (build-essential, pkg-config,
+etc.), to build C modules, and the slixmpp python library. You also need
+aiodns if you want SRV record support.
 
 The easiest way to have up-to-date dependencies and to be able to test
 this developement version is to use the ``update.sh`` script that downloads
