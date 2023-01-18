@@ -786,11 +786,12 @@ class HandlerCore:
     async def on_presence_error(self, presence: Presence):
         jid = presence['from']
         contact = roster[jid.bare]
-        if not contact:
+        if contact:
+            roster.modified()
+            contact.error = presence['error']['text'] or presence['error']['type'] + ': ' + presence['error']['condition']
+            # TODO:  reset chat states status on presence error
             return
-        roster.modified()
-        contact.error = presence['error']['text'] or presence['error']['type'] + ': ' + presence['error']['condition']
-        # TODO:  reset chat states status on presence error
+        await self.on_groupchat_presence(presence)
 
     async def on_got_offline(self, presence: Presence):
         """
