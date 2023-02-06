@@ -592,6 +592,10 @@ class MucTab(ChatTab):
             highlight = self.message_is_highlight(
                 message.body, message.nick, message.is_history
             )
+            stanza_id = None
+            if message.message['stanza_id']['by'] == self.jid:
+                stanza_id = message.message['stanza_id']['id']
+
             ui_msg = Message(
                 txt=message.body,
                 time=message.date,
@@ -600,6 +604,7 @@ class MucTab(ChatTab):
                 delayed=message.delayed,
                 identifier=message.message['id'],
                 jid=message.message['from'],
+                stanza_id=stanza_id,
                 user=message.user,
                 highlight=highlight,
             )

@@ -145,7 +145,7 @@ class StatusMessage(BaseMessage):
 class Message(BaseMessage, LoggableTrait):
     __slots__ = ('nick_color', 'nickname', 'user', 'delayed', 'history',
                  'highlight', 'me', 'old_message', 'revisions',
-                 'jid', 'ack')
+                 'jid', 'stanza_id', 'ack')
     nick_color: Optional[Tuple]
     nickname: Optional[str]
     user: Optional[User]
@@ -156,6 +156,7 @@ class Message(BaseMessage, LoggableTrait):
     old_message: Optional[Message]
     revisions: int
     jid: Optional[JID]
+    stanza_id: Optional[str]
     ack: int
 
     def __init__(self,
@@ -171,6 +172,7 @@ class Message(BaseMessage, LoggableTrait):
                  old_message: Optional[Message] = None,
                  revisions: int = 0,
                  jid: Optional[JID] = None,
+                 stanza_id: Optional[str] = None,
                  ack: int = 0) -> None:
         """
         Create a new Message object with parameters, check for /me messages,
@@ -199,6 +201,7 @@ class Message(BaseMessage, LoggableTrait):
         self.old_message = old_message
         self.revisions = revisions
         self.jid = jid
+        self.stanza_id = stanza_id
         self.ack = ack
 
     def _other_elems(self) -> str:
