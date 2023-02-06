@@ -528,6 +528,15 @@
     </implements>
     <implements>
         <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0425.html"/>
+            <xmpp:status>partial</xmpp:status>
+            <xmpp:version>0.2.1</xmpp:version>
+            <xmpp:since>0.14</xmpp:since>
+            <xmpp:note>Sending only</xmpp:note>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0454.html"/>
             <xmpp:status>partial</xmpp:status>
             <xmpp:version>0.1</xmpp:version>
