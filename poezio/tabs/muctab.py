@@ -274,7 +274,7 @@ class MucTab(ChatTab):
         nick = None
         for user in self.users:
             if user.nick == nick_or_jid:
-                jid = user.jid
+                jid = JID(user.jid.bare)
                 nick = user.nick
                 break
         if jid is None:
