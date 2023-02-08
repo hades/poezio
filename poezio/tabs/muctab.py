@@ -593,7 +593,7 @@ class MucTab(ChatTab):
                 message.body, message.nick, message.is_history
             )
             stanza_id = None
-            if message.message['stanza_id']['by'] == self.jid:
+            if message.message['stanza_id'] and message.message['stanza_id']['by'] == self.jid:
                 stanza_id = message.message['stanza_id']['id']
 
             ui_msg = Message(
