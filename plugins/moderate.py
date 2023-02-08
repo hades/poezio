@@ -57,7 +57,10 @@ class Plugin(BasePlugin):
             return False
 
         all_messages = self.api.get_conversation_messages()[:-100:-1]
-        filtered_messages = filter(lambda m: isinstance(m, Message) and m.nickname, all_messages)
+        filtered_messages = filter(
+            lambda m: isinstance(m, Message) and m.nickname and m.stanza_id,
+            all_messages,
+        )
         messages = list(map(lambda m: m.time.strftime(DATETIME_FORMAT), filtered_messages))
 
         if not messages:
