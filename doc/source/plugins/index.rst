@@ -139,6 +139,11 @@ Plugin index
 
         Opens links in a web browser, locally or remotely using a FIFO and SSH.
 
+    Moderate
+        :ref:`Documentation <moderate-plugin>`
+
+        Retracts a message as a moderator in groupchats.
+
     MPD Client
         :ref:`Documentation <mpdclient-plugin>`
 

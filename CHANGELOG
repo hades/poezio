@@ -3,6 +3,7 @@ This file describes the new features in each poezio release.
 * Poezio XXX-dev
 
 - Log join presence errors
+- New plugin: moderate (XEP-0425)
 
 * Poezio 0.14
 
