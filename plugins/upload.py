@@ -23,6 +23,7 @@ import asyncio
 import traceback
 from os.path import expanduser
 from glob import glob
+from pathlib import Path
 
 from slixmpp.plugins.xep_0363.http_upload import FileTooBig, HTTPError, UploadServiceNotFound
 
@@ -86,7 +87,7 @@ class Plugin(BasePlugin):
             self.core.command.help('upload')
             return
         filename, = args
-        filename = expanduser(filename)
+        filename = Path(expanduser(filename))
         tab = self.api.current_tab()
         encrypted = self.core.xmpp['xep_0454'] and tab.e2e_encryption is not None
         asyncio.create_task(self.send_upload(filename, tab, encrypted))
