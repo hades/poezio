@@ -1079,7 +1079,7 @@ class Core:
 
             for jid in jids:
                 await self.invite(jid, room, force_mediated=True)
-            jids_str = ', '.join(jids)
+            jids_str = ', '.join(map(lambda j: j.full, jids))
             self.information(f'Invited {jids_str} to {room.bare}', 'Info')
 
         self.xmpp.add_event_handler(
