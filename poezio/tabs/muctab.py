@@ -498,7 +498,7 @@ class MucTab(ChatTab):
 
         Returns False if the message was dropped silently.
         """
-        room_from = message['from'].bare
+        room_from = JID(message['from'].bare)
         nick_from = message['mucnick']
         user = self.get_user_by_name(nick_from)
         if user and user in self.ignores:
