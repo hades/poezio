@@ -68,16 +68,6 @@ The :ref:`rostertab` is the tab numbered ``0``, and the only one which is
 always open. To add people, use :term:`/add`, to accept a contact request use
 :term:`/accept`.
 
-Using end-to-end encryption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To use OTR end-to-end encryption, you have to :ref:`enable <plugins-doc>` the
-:ref:`OTR plugin <otr-plugin>`. The plugin requires python-potr for python3, so
-make sure you have it installed first.
-
-After that, you can enable the OTR plugin with ``/load otr``. Further usage is
-discussed in the :ref:`plugin documentation <otr-plugin>`.
-
 
 Exiting poezio
 ~~~~~~~~~~~~~~

@@ -158,11 +158,6 @@ Plugin index
         Allows for end-to-end encrypted exchanges using the OMEMO
         mechanism.
 
-    OTR
-        :ref:`Documentation <otr-plugin>`
-
-        Allows encrypted and deniable exchanges using OTR.
-
     PacoKick
         :ref:`Documentation <pacokick-plugin>`
 

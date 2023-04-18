@@ -4,6 +4,7 @@ This file describes the new features in each poezio release.
 
 - Log join presence errors
 - New plugin: moderate (XEP-0425)
+- OTR plugin removal
 
 * Poezio 0.14
 

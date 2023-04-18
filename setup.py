@@ -166,7 +166,7 @@ setup(
         + sphinx_files_found
     ),
     install_requires=['slixmpp>=1.6.0', 'aiodns', 'pyasn1_modules', 'pyasn1', 'typing_extensions', 'setuptools'],
-    extras_require={'OTR plugin': 'python-potr>=1.0',
+    extras_require={
         'Screen autoaway plugin': 'pyinotify==0.9.4',
         'Avoiding cython': 'cffi'},
     cmdclass=cmdclass,
