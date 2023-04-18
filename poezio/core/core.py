@@ -1258,7 +1258,7 @@ class Core:
 
     def focus_tab_named(self,
                         tab_name: str,
-                        type_: Type[Tab] = None) -> bool:
+                        type_: Optional[Type[Tab]] = None) -> bool:
         """Returns True if it found a tab to focus on"""
         if type_ is None:
             tab = self.tabs.by_name(tab_name)
@@ -1405,7 +1405,7 @@ class Core:
         if tab is not None:  # display the message in private
             tab.update_status(status)
 
-    def close_tab(self, to_close: Tab = None) -> None:
+    def close_tab(self, to_close: Optional[Tab] = None) -> None:
         """
         Close the given tab. If None, close the current one
         """

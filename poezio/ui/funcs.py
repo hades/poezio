@@ -10,8 +10,8 @@ DIGITS = string.digits + '-'
 
 
 def find_first_format_char(text: str,
-                           chars: str = None) -> int:
-    to_find = chars or FORMAT_CHARS 
+                           chars: Optional[str] = None) -> int:
+    to_find: str = chars or FORMAT_CHARS
     pos = -1
     for char in to_find:
         p = text.find(char)

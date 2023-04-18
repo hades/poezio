@@ -25,7 +25,7 @@ class EventHandler:
     the callback is called.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         events = [
             'highlight',
             'muc_say',

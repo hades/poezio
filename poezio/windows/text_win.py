@@ -189,7 +189,7 @@ class TextWin(Win):
             self.built_lines.remove(None)
             self.separator_after = None
 
-    def add_line_separator(self, room: TextBuffer = None) -> None:
+    def add_line_separator(self, room: Optional[TextBuffer] = None) -> None:
         """
         add a line separator at the end of messages list
         room is a textbuffer that is needed to get the previous message

@@ -399,7 +399,7 @@ class FormWin:
             if field['type'] == 'hidden':
                 continue
             if field['type'] not in self.input_classes:
-                input_class: Type[FieldInputMixin] = TextSingleWin
+                input_class = TextSingleWin
             else:
                 input_class = self.input_classes[field['type']]
             label = field['label']

@@ -32,7 +32,7 @@ class Resource:
     It's a precise resource.
     """
 
-    def __init__(self, jid, data):
+    def __init__(self, jid: str, data: Dict[str, Union[str, int]]):
         """
         data: the dict to use as a source
         """
