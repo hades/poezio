@@ -124,7 +124,7 @@ class MucTab(ChatTab):
         self.info_header = windows.MucInfoWin()
         self.input: windows.MessageInput = windows.MessageInput()
         # List of ignored users
-        self.ignores: List[User] = []
+        self.ignores: List[str] = []
         # keys
         self.register_keys()
         self.update_keys()
@@ -501,7 +501,7 @@ class MucTab(ChatTab):
         room_from = JID(message['from'].bare)
         nick_from = message['mucnick']
         user = self.get_user_by_name(nick_from)
-        if user and user in self.ignores:
+        if user and nick_from in self.ignores:
             return False
 
         await self.core.events.trigger_async('muc_msg', message, self)
@@ -1923,11 +1923,11 @@ class MucTab(ChatTab):
         nick = args[0]
         user = self.get_user_by_name(nick)
 
-        if user in self.ignores:
+        if nick in self.ignores:
             self.core.information('%s is already ignored' % nick)
             return
 
-        self.ignores.append(user)
+        self.ignores.append(nick)
         if not user:
             self.core.information('%s is not in the room but is now ignored' % nick)
         else:
@@ -1945,11 +1945,12 @@ class MucTab(ChatTab):
         nick = args[0]
         user = self.get_user_by_name(nick)
 
-        if user not in self.ignores:
+        try:
+            self.ignores.remove(nick)
+        except ValueError:
             self.core.information('%s is not ignored' % nick)
             return
 
-        self.ignores.remove(user)
         if not user:
             self.core.information('%s is not in the room but is now unignored' % nick)
         else:
@@ -2148,7 +2149,7 @@ class MucTab(ChatTab):
 
     def completion_unignore(self, the_input: windows.MessageInput) -> Optional[Completion]:
         if the_input.get_argument_position() == 1:
-            users = [user.nick for user in self.ignores]
+            users = [nick for nick in self.ignores]
             return Completion(the_input.auto_completion, users, quotify=False)
         return None
 
