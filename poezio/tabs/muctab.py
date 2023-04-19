@@ -2170,7 +2170,7 @@ class MucTab(ChatTab):
             'usage': '<nickname>',
             'desc': 'Ignore a specified nickname.',
             'shortdesc': 'Ignore someone',
-            'completion': self.completion_unignore
+            'completion': self.completion_ignore
         }, {
             'name':
             'unignore',
