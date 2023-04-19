@@ -1924,14 +1924,14 @@ class MucTab(ChatTab):
         user = self.get_user_by_name(nick)
 
         if nick in self.ignores:
-            self.core.information('%s is already ignored' % nick)
+            self.core.information(f'{nick} is already ignored')
             return
 
         self.ignores.append(nick)
         if not user:
-            self.core.information('%s is not in the room but is now ignored' % nick)
+            self.core.information(f'{nick} is not in the room but is now ignored')
         else:
-            self.core.information('%s is now ignored' % nick, 'info')
+            self.core.information(f'{nick} is now ignored', 'info')
 
     @command_args_parser.quoted(1)
     def command_unignore(self, args: List[str]) -> None:
@@ -1948,13 +1948,13 @@ class MucTab(ChatTab):
         try:
             self.ignores.remove(nick)
         except ValueError:
-            self.core.information('%s is not ignored' % nick)
+            self.core.information(f'{nick} is not ignored')
             return
 
         if not user:
-            self.core.information('%s is not in the room but is now unignored' % nick)
+            self.core.information(f'{nick} is not in the room but is now unignored')
         else:
-            self.core.information('%s is now unignored' % nick)
+            self.core.information(f'{nick} is now unignored')
 
     @command_args_parser.quoted(0, 1)
     def command_request_voice(self, args: List[str]) -> None:
