@@ -1,0 +1,44 @@
+# This config shows how to handle Python-CI focusing on code quality 
+# was taken from https://codeberg.org/sail.black/serial-sphinx/src/branch/main/.woodpecker.yml
+# check there for license information
+
+
+steps:
+  mypy-fixed:
+    image: python:3
+    script:
+      - pip3 install mypy==0.971 types-setuptools
+      - mypy --ignore-missing-imports ./poezio
+      - mypy --ignore-missing-imports ./plugins
+
+  mypy-latest:
+    image: python:3
+    script:
+      - pip3 install mypy types-setuptools
+      - mypy --ignore-missing-imports ./poezio
+      - mypy --ignore-missing-imports ./plugins
+
+
+  pylint-plugins:
+    image: python:3
+    commands:
+      - apt-get update && apt-get install -y libidn11-dev
+      - pip3 install pylint pyasn1-modules cffi --upgrade
+      - pip3 install -e git+https://lab.louiz.org/poezio/slixmpp.git#egg=slixmpp
+      - pip3 install -r requirements-plugins.txt
+      - python3 setup.py install
+      - pylint -E plugins
+
+  build-ubuntu:
+    image: python:3
+    commands:
+      - python3 setup.py sdist
+      - python3 setup.py bdist
+    when:
+      branch: main
+
+  security-check:
+    image: python:3
+    commands:
+      - pip3 install safety
+      - safety check -r requirements.txt
