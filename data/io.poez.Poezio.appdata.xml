@@ -10,7 +10,7 @@
   <icon type="remote">https://poez.io/img/logo.svg</icon>
 
   <url type="homepage">https://poez.io</url>
-  <url type="bugtracker">https://lab.louiz.org/poezio/poezio/-/issues</url>
+  <url type="bugtracker">https://codeberg.org/poezio/poezio/issues</url>
   <url type="help">https://doc.poez.io</url>
 
   <description>

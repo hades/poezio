@@ -126,7 +126,7 @@ setup(
     ext_modules=[module_poopt],
     url='https://poez.io/',
     license='GPL-3.0-or-later',
-    download_url='https://lab.louiz.org/poezio/poezio/-/tags',
+    download_url='https://codeberg.org/poezio/poezio/tags',
 
     author='Florent Le Coz',
     author_email='louiz@louiz.org',

@@ -1,17 +1,17 @@
 poezio
 ======
 
-.. image:: https://lab.louiz.org/poezio/poezio/-/raw/main/data/poezio_logo.svg
+.. image:: https://codeberg.org/poezio/poezio/-/raw/main/data/poezio_logo.svg
    :alt: Poezio logo
    :width: 200
 
-|pipeline| |python versions| |license|
+|python versions| |license|
 
 |discuss|
 
 Homepage:      https://poez.io
 
-Forge Page:    https://lab.louiz.org/poezio/poezio
+Forge Page:    https://codeberg.org/poezio/poezio
 
 Poezio is a console Jabber/XMPP client. The initial goal was to provide a
 way of connecting easily to XMPP without the need for an account, exactly like
@@ -88,7 +88,7 @@ Contact/support
 Jabber chat room:   `poezio@muc.poez.io <xmpp:poezio@muc.poez.io?join>`_
 (`web chat`_)
 
-Report a bug:      https://lab.louiz.org/poezio/poezio/issues/new
+Report a bug:      https://codeberg.org/poezio/poezio/issues/new
 
 License
 -------
@@ -125,8 +125,8 @@ If you want to contribute, you will be welcome on
 to announce your ideas, what you are going to do, or to seek help if you have
 trouble understanding some of the code.
 
-The preferred way to submit changes is through a merge request on gitlab,
-at https://lab.louiz.org/poezio/poezio, but we also accept contributions
+The preferred way to submit changes is through a merge request on codeberg,
+at https://codeberg.org/poezio/poezio, but we also accept contributions
 on github, or with a simple “please fetch my code on my personal git
 repository hosted somewhere”.
 
@@ -158,8 +158,6 @@ Thanks
     - And all the people using and testing poezio, and especially the ones present
       on the jabber chatroom doing bug reports and/or feature requests.
 
-
-.. |pipeline| image:: https://lab.louiz.org/poezio/poezio/badges/main/pipeline.svg
 
 .. |python versions| image:: https://img.shields.io/pypi/pyversions/poezio.svg
 

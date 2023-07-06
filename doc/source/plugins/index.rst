@@ -151,9 +151,9 @@ Plugin index
         the current (chat) tab.
 
     OMEMO
-        **Not distributed with Poezio.** See https://lab.louiz.org/poezio/poezio-omemo.
+        **Not distributed with Poezio.** See https://codeberg.org/poezio/poezio-omemo.
 
-        `Documentation <https://lab.louiz.org/poezio/poezio-omemo>`_
+        `Documentation <https://codeberg.org/poezio/poezio-omemo>`_
 
         Allows for end-to-end encrypted exchanges using the OMEMO
         mechanism.

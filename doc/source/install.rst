@@ -56,7 +56,7 @@ support. Therefore, you might want to use the git version.
 
 .. code-block:: bash
 
-    git clone https://lab.louiz.org/poezio/poezio
+    git clone https://codeberg.org/poezio/poezio
     cd poezio
 
 """""""
@@ -116,7 +116,7 @@ Poezio depends on slixmpp, a non-threaded fork of the SleekXMPP library.
 
 .. code-block:: bash
 
-    git clone https://lab.louiz.org/poezio/slixmpp
+    git clone https://codeberg.org/poezio/slixmpp
     python3 setup.py install --user
 
 
@@ -244,7 +244,7 @@ that should be created beforehand:
 If you don’t trust images distributed on the docker hub, you can rebuild the
 image from the Dockerfile at the root of the git repository.
 
-.. _slixmpp: https://lab.louiz.org/poezio/slixmpp
+.. _slixmpp: https://codeberg.org/poezio/slixmpp
 .. _aiodns: https://github.com/saghul/aiodns
 .. _poezio: https://aur.archlinux.org/packages/poezio/
 .. _poezio-git: https://aur.archlinux.org/packages/poezio-git/
