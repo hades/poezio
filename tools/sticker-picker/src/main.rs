@@ -43,7 +43,7 @@ fn main() {
             .build();
         window.set_child(Some(&sw));
 
-        let store = gio::ListStore::new(Sticker::static_type());
+        let store = gio::ListStore::with_type(Sticker::static_type());
 
         for dir_entry in std::fs::read_dir(path).unwrap() {
             let dir_entry = dir_entry.unwrap();
@@ -70,7 +70,7 @@ fn main() {
             }
         });
 
-        let selection = gtk::SingleSelection::new(Some(&store));
+        let selection = gtk::SingleSelection::builder().model(&store).build();
         let grid_view = gtk::GridView::builder()
             .single_click_activate(true)
             .model(&selection)

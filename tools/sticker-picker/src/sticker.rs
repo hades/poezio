@@ -25,32 +25,24 @@ impl ObjectImpl for Sticker {
         use once_cell::sync::Lazy;
         static PROPERTIES: Lazy<Vec<glib::ParamSpec>> = Lazy::new(|| {
             vec![
-                glib::ParamSpecString::new(
-                    "filename",
-                    "Filename",
-                    "Filename",
-                    None,
-                    glib::ParamFlags::READWRITE | glib::ParamFlags::CONSTRUCT_ONLY,
-                ),
-                glib::ParamSpecObject::new(
-                    "texture",
-                    "Texture",
-                    "Texture",
-                    gdk::Texture::static_type(),
-                    glib::ParamFlags::READWRITE | glib::ParamFlags::CONSTRUCT_ONLY,
-                ),
+                glib::ParamSpecString::builder("filename")
+                    .nick("Filename")
+                    .blurb("Filename")
+                    .readwrite()
+                    .construct_only()
+                    .build(),
+                glib::ParamSpecObject::builder::<gdk::Texture>("texture")
+                    .nick("Texture")
+                    .blurb("Texture")
+                    .readwrite()
+                    .construct_only()
+                    .build(),
             ]
         });
         PROPERTIES.as_ref()
     }
 
-    fn set_property(
-        &self,
-        _obj: &StickerType,
-        _id: usize,
-        value: &glib::Value,
-        pspec: &glib::ParamSpec,
-    ) {
+    fn set_property(&self, _id: usize, value: &glib::Value, pspec: &glib::ParamSpec) {
         match pspec.name() {
             "filename" => {
                 let filename = value.get().unwrap();
@@ -64,7 +56,7 @@ impl ObjectImpl for Sticker {
         }
     }
 
-    fn property(&self, _obj: &StickerType, _id: usize, pspec: &glib::ParamSpec) -> glib::Value {
+    fn property(&self, _id: usize, pspec: &glib::ParamSpec) -> glib::Value {
         match pspec.name() {
             "filename" => self.filename.borrow().to_value(),
             "texture" => self.texture.borrow().to_value(),
@@ -80,8 +72,10 @@ glib::wrapper! {
 impl StickerType {
     pub fn new(filename: String, path: &Path) -> StickerType {
         let texture = gdk::Texture::from_filename(path).unwrap();
-        glib::Object::new(&[("filename", &filename), ("texture", &texture)])
-            .expect("Failed to create Sticker")
+        glib::Object::builder::<StickerType>()
+            .property("filename", &filename)
+            .property("texture", &texture)
+            .build()
     }
 
     pub fn filename(&self) -> Option<String> {
