@@ -123,10 +123,10 @@ html_last_updated_fmt = '%b %d, %Y'
 # of the sidebar.
 #html_logo = None
 
-# The name of an image file (within the static path) to use as favicon of the
+# The name of an image file to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "poezio.png"
+html_favicon = "theme/static/poezio.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -258,4 +258,4 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
